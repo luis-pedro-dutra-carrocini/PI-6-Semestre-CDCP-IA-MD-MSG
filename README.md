@@ -2,7 +2,7 @@
 Repositório do GRUPO 03 do Projeto Interdisciplinar do 6º semestre DSM 2026/2. Alunos: Cláudio de Melo Júnior, João Vitor Nicolau e Luís Pedro Dutra Carrocini. Link para o [repositório original](https://github.com/FatecFranca/DSM-G03-PI6-2026-2).
 
 ---
-<br>
+
 # PI 6° Semestre | CDCP - Classificador de Chamados Públicos
 
 Este projeto é o sexto PI (Projeto Interdisciplinar) do curso de DSM (Desenvolvimento de Software Multiplataforma) da Faculdade de Tecnologia Fatec Franca Dr. Thomaz Novelino. Seu objetivo é integrar os conhecimentos adquiridos nas principais disciplinas do sexto semestre: Computação em Nuvem II, Laborátorio de Desenvolvimento Multiplataforma e Mineração de Dados. O resultado é um aplicativo desenvolvido em Flutter, cuja o objetivo é que pessoas comuns (cidadãos) façam a criação de chamados/suportes de necessidades na cidade a suas respectivas prefeituras. Após a criação do mesmo, haverá um PLN (Processamento de Linguagem Natural) que obterá os dados necessário para classificação do chamado, que serão enviados para o modelo de IA (Inteligência Artificaila) que irá classificar a urgência do chamado, de acordo com descrição do problema passada pelo cidadão e processada pelo PLN. Aparecendo posteriormente os chamados em um painel administrativo (Web), onde os gestores de chamados irão atribui-los aos técnicos que poderão acompanhar e documentar as atividades no seu aplicativo móvel.
