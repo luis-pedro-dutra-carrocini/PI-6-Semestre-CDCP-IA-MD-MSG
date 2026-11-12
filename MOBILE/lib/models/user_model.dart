@@ -1,0 +1,56 @@
+class UserProfile {
+  final String id;
+  final String name;
+  String email;
+  String phone;
+  final String cpfOrId;
+  final String role;
+  final String unitName;
+  final int? unidadeId;
+  final String? token;
+  final String? equipeId;
+  final String? usuario;
+
+  UserProfile({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.phone,
+    required this.cpfOrId,
+    required this.role,
+    required this.unitName,
+    this.unidadeId,
+    this.token,
+    this.equipeId,
+    this.usuario,
+  });
+
+  bool get isTecnico {
+    final r = role.toUpperCase().trim();
+    return r == 'TECNICO' || r == 'TÉCNICO' || r == 'TECHNICIAN';
+  }
+
+  bool get isPessoa {
+    final r = role.toUpperCase().trim();
+    return r == 'PESSOA' || r == 'CIDADAO' || r == 'CIDADÃO' || r == 'CITIZEN';
+  }
+
+  factory UserProfile.fromJson(Map<String, dynamic> json) {
+    final data = json['data'] as Map<String, dynamic>? ?? {};
+    final usuario = data['usuario'] as Map<String, dynamic>? ?? {};
+
+    return UserProfile(
+      id: usuario['PessoaId'] ?? usuario['TecnicoId'] ?? '',
+      name: usuario['PessoaNome'] ?? usuario['TecnicoNome'] ?? 'Usuário',
+      email: usuario['PessoaEmail'] ?? usuario['TecnicoEmail'] ?? '',
+      phone: usuario['PessoaTelefone'] ?? usuario['TecnicoTelefone'] ?? '',
+      cpfOrId: usuario['PessoaCPF'] ?? usuario['TecnicoCPF'] ?? 'Não informado',
+      role: data['tipo'] ?? 'desconhecido',
+      unitName: usuario['Unidade']?['UnidadeNome'] ?? 'Sem unidade',
+      unidadeId: usuario['Unidade']?['UnidadeId'],
+      equipeId: json['EquipeId'] ?? json['equipeId'],
+      token: data['token'],
+      usuario: usuario['TecnicoUsuario'] ?? 'Não informado',
+    );
+  }
+}
